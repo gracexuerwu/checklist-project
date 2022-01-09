@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import TaskColumn from './components/TaskColumn';
+import TaskTracker from './components/TaskTracker';
+import EnterTaskColumn from './components/EnterTaskColumn';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="Container">
+        <h1>SELF-CARE CHECKLIST</h1>
+        <h2>Date: 6/1/2021</h2>
+        <h3>Mon Tue Wed Thu Fri Sat Sun</h3>
+        <EnterTaskColumn />
+        <div className="EnterMessage">**You’ve exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div>
+        <div className="Heading">Tasks to do</div>
+        <TaskColumn />
+        <TaskColumn />
+        <TaskColumn />
+        <TaskColumn />
+        <TaskColumn />
+        <div className="Heading">Task Tracker</div>
+        <TaskTracker />
+      </div>
+    </div >
   );
 }
 

@@ -1,0 +1,17 @@
+.TaskTracker {
+  width: 773px;
+  height: 102px;
+  left: 370px;
+  top: 773px;
+  background: #ffeadb;
+  border: 1px dashed #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin-top: 20px;
+}
+h4 {
+  margin-top: 15px;
+  text-align: start;
+  margin-left: 20px;
+}

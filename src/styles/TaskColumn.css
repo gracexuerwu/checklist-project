@@ -1,0 +1,32 @@
+.TaskColumn-left {
+  width: 702px;
+  height: 50px;
+  background: #ffe5c4;
+  border: 1px dashed #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px 0px 0px 20px;
+  /* margin: 0 auto; */
+  margin-top: 15px;
+}
+.TaskColumn-left p {
+  margin-top: 10px;
+}
+.TaskColumn-right {
+  width: 51px;
+  height: 50px;
+  background: #ffe5c4;
+  border: 1px dashed #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 20px 20px 0px;
+  margin-top: 15px;
+}
+p {
+  text-align: start;
+  margin-left: 15px;
+  font-size: 20px;
+}
+.tickBox {
+  margin-top: 15px;
+}
