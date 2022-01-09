@@ -15,3 +15,13 @@ h4 {
   text-align: start;
   margin-left: 20px;
 }
+.Numberbox {
+  margin-top: 15px;
+  background: #ffffff;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 3px;
+  width: 23px;
+  height: 23px;
+  font-size: 18px;
+}

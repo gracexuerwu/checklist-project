@@ -5,7 +5,7 @@ export default function TaskColumn() {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-11">
+                <div className="col-11 align-self-start">
                     <div className="TaskColumn-left">
                         <p>Meditate</p>
                     </div>

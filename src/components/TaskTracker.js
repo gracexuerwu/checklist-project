@@ -9,7 +9,7 @@ export default function TaskTracker() {
                     <h4>All tasks</h4>
                 </div>
                 <div className="col-1">
-                    <h4>5</h4>
+                    <div className="Numberbox">5</div>
                 </div>
             </div>
             <div className="row">
@@ -17,7 +17,7 @@ export default function TaskTracker() {
                     <h4>Completed</h4>
                 </div>
                 <div className="col-1">
-                    <h4>0</h4>
+                    <div className="Numberbox">0</div>
                 </div>
             </div>
         </div>
