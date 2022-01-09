@@ -9,7 +9,7 @@ export default function EnterTaskColumn() {
                     <p>Enter tasks here</p>
                 </div>
                 <div className="col-1">
-                    <i class="fas fa-pencil-alt fa-lg pencilIcon"></i>
+                    <i className="fas fa-pencil-alt fa-lg pencilIcon"></i>
                 </div>
             </div>
         </div>

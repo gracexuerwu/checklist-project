@@ -2,14 +2,31 @@ import './App.css';
 import TaskColumn from './components/TaskColumn';
 import TaskTracker from './components/TaskTracker';
 import EnterTaskColumn from './components/EnterTaskColumn';
+import React from 'react';
 
 
 function App() {
+  //Date
+  let date = new Date();
+  let day = date.getDate();
+  if (day < 10) {
+    day = `0${day}`;
+  }
+  let month = (date.getMonth() + 1);
+  if (month < 10) {
+    month = `0${month}`;
+  }
+  let year = date.getFullYear();
+
+  let currentDate = day + '/' + month + '/' + year;
+  console.log(currentDate);
+
+
   return (
     <div className="App">
       <div className="Container">
         <h1>SELF-CARE CHECKLIST</h1>
-        <h2>Date: 6/1/2021</h2>
+        <h2>Date: {currentDate}</h2>
         <h3>Mon Tue Wed Thu Fri Sat Sun</h3>
         <EnterTaskColumn />
         <div className="EnterMessage">**You’ve exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div>
@@ -23,7 +40,7 @@ function App() {
         <TaskTracker />
       </div>
     </div >
-  );
+  )
 }
 
 export default App;
