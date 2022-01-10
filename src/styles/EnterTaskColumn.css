@@ -16,3 +16,13 @@
   margin-right: 18px;
   margin-top: 14px;
 }
+.form-control {
+  width: 773px;
+  height: 50px;
+  background: #ffe5c4;
+  border: 1px dashed #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
