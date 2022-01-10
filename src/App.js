@@ -1,9 +1,14 @@
+import React from 'react';
 import './App.css';
+
+//import components
 import TaskColumn from './components/TaskColumn';
 import TaskTracker from './components/TaskTracker';
 import EnterTaskColumn from './components/EnterTaskColumn';
-import React from 'react';
+import Signature from './components/Signature';
 
+//import images
+import selfCareicon from "./images/selfcare.png";
 
 function App() {
   //Date
@@ -26,7 +31,10 @@ function App() {
   return (
     <div className="App">
       <div className="Container">
-        <h1>SELF-CARE CHECKLIST</h1>
+        <div className="d-flex justify-content-center">
+          <h1>SELF-CARE CHECKLIST</h1>
+          <img src={selfCareicon} alt="" width={65} className="selfCareIcon" />
+        </div>
         <h2>Date: {currentDate}</h2>
         <div className="daysOfTheWeek">{daysOfTheWeek.map((day, index) => {
           return (<span key={index}>{day}</span>);
@@ -41,6 +49,7 @@ function App() {
         <TaskColumn />
         <div className="Heading">Task Tracker</div>
         <TaskTracker />
+        <Signature />
       </div>
     </div >
   )

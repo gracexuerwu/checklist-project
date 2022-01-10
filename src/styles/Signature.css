@@ -1,0 +1,27 @@
+.Signature {
+  text-align: center;
+  font-size: 18px;
+  line-height: 19px;
+  font-weight: 400px;
+  margin-top: 55px;
+}
+.Signature .signatureGitLink {
+  text-decoration: none;
+}
+.Signature .signature-blue {
+  color: #467aff;
+}
+.Signature .fa-github {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.signatureLinkedIn {
+  text-decoration: none;
+  color: black;
+}
+.signatureLinkedIn:hover {
+  color: rgb(75, 75, 75);
+  transition: all 200ms ease;
+  cursor: pointer;
+  text-decoration: underline;
+}

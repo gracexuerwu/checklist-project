@@ -23,7 +23,7 @@ body {
 }
 .Container {
   width: 917px;
-  height: 921px;
+  height: 980px;
   background: #ffffff;
   border: 2px solid #000000;
   box-sizing: border-box;
@@ -65,4 +65,8 @@ h2 {
   font-family: HKGrotesk;
   color: red;
   margin-top: 5px;
+}
+.selfCareIcon {
+  margin-left: 10px;
+  margin-top: 12px;
 }

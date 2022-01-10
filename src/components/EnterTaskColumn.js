@@ -21,7 +21,7 @@ export default function EnterTaskColumn() {
                         onChange=""
                         className="form-control"
                         id="search-input"
-                        placeholder="Pen your tasks"
+                        placeholder="Pen your tasks here . . ."
                         autoFocus="on"
                         autoComplete="off"
                     />
