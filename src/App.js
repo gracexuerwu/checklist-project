@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from "react";
 import './App.css';
 
 //import components
@@ -11,6 +11,21 @@ import Signature from './components/Signature';
 import selfCareicon from "./images/selfcare.png";
 
 function App() {
+
+  function callbackByEnterTaskColumn(task) {
+    // alert(task);
+    if (todoArray.length < 5) {
+      setTodoArray([...todoArray, { task, status: false }]);
+    }
+    else { }
+  }
+
+  const [todoArray, setTodoArray] = useState([
+    { task: 'AAA', status: false },
+    { task: 'BBB', status: false },
+    { task: 'CCC', status: false }
+  ]);
+
   //Date
   let date = new Date();
   let day = date.getDate();
@@ -27,6 +42,7 @@ function App() {
 
   let daysOfTheWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+  let dayIndex = date.getDay();
 
   return (
     <div className="App">
@@ -37,16 +53,23 @@ function App() {
         </div>
         <h2>Date: {currentDate}</h2>
         <div className="daysOfTheWeek">{daysOfTheWeek.map((day, index) => {
-          return (<span key={index}>{day}</span>);
+          if (index === dayIndex) {
+            return (<strong key={index}>{day}</strong>);
+          }
+          else {
+            return (<span key={index}>{day}</span>);
+          }
         })}</div>
-        <EnterTaskColumn />
+        <EnterTaskColumn callback={callbackByEnterTaskColumn} />
         <div className="EnterMessage">**You’ve exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div>
         <div className="Heading">Tasks to do</div>
-        <TaskColumn />
-        <TaskColumn />
-        <TaskColumn />
-        <TaskColumn />
-        <TaskColumn />
+        {/* <TaskColumn task="AAA" />
+        <TaskColumn task="CCC" /> */}
+        {
+          todoArray.map(({ task, status }, index) => (
+            <TaskColumn key={index} task={task} />
+          ))
+        }
         <div className="Heading">Task Tracker</div>
         <TaskTracker />
         <Signature />
