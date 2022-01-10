@@ -38,12 +38,22 @@ body {
 h1 {
   margin-top: 15px;
 }
-h3 {
+h2 {
+  font-size: 25px;
+}
+.daysOfTheWeek {
   margin-top: 20px;
+  font-family: Your Doodle Font;
+  font-style: normal;
+  font-weight: normal;
   font-size: 22px;
-  line-height: 23px;
+  line-height: 133.9%;
+  /* or 29px */
+
   text-align: center;
-  letter-spacing: 0.41em;
+  letter-spacing: 0.565em;
+
+  color: #a3a3a3;
 }
 .Heading {
   text-align: start;

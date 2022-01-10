@@ -17,9 +17,10 @@ function App() {
     month = `0${month}`;
   }
   let year = date.getFullYear();
-
   let currentDate = day + '/' + month + '/' + year;
   console.log(currentDate);
+
+  let daysOfTheWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 
   return (
@@ -27,7 +28,9 @@ function App() {
       <div className="Container">
         <h1>SELF-CARE CHECKLIST</h1>
         <h2>Date: {currentDate}</h2>
-        <h3>Mon Tue Wed Thu Fri Sat Sun</h3>
+        <div className="daysOfTheWeek">{daysOfTheWeek.map((day, index) => {
+          return (<span key={index}>{day}</span>);
+        })}</div>
         <EnterTaskColumn />
         <div className="EnterMessage">**You’ve exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div>
         <div className="Heading">Tasks to do</div>
