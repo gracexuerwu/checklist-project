@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/EnterTaskColumn.css";
 
 export default function EnterTaskColumn() {
+    const [task, setTask] = useState('Pen your tasks here . . .');
+
+    const onChange = (event) => {
+        setTask(event.target.value);
+    }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // alert(task);
+        props.callback(task);
+    }
     return (
         // <div className="EnterTaskColumn">
         //     <div className="row">
@@ -13,15 +23,15 @@ export default function EnterTaskColumn() {
         //         </div>
         //     </div>
         // </div>
-        <form id="search-form" onSubmit="">
+        <form id="search-form" onSubmit={handleSubmit}>
             <div className="form-row">
                 <div className="col-11 btn">
                     <input
                         type="text"
-                        onChange=""
+                        onChange={onChange}
                         className="form-control"
                         id="search-input"
-                        placeholder="Pen your tasks here . . ."
+                        placeholder={task}
                         autoFocus="on"
                         autoComplete="off"
                     />

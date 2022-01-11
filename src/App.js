@@ -11,6 +11,13 @@ import Signature from './components/Signature';
 import selfCareicon from "./images/selfcare.png";
 
 function App() {
+
+  //Task callback
+  function callbackByEnterTaskColumn(task) {
+    alert(task);
+  }
+
+
   //Date
   let date = new Date();
   let day = date.getDate();
@@ -39,7 +46,7 @@ function App() {
         <div className="daysOfTheWeek">{daysOfTheWeek.map((day, index) => {
           return (<span key={index}>{day}</span>);
         })}</div>
-        <EnterTaskColumn />
+        <EnterTaskColumn callback={callbackByEnterTaskColumn} />
         <div className="EnterMessage">**You’ve exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div>
         <div className="Heading">Tasks to do</div>
         <TaskColumn />
