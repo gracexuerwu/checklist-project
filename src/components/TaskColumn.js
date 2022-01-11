@@ -1,13 +1,13 @@
 import React from "react";
 import "../styles/TaskColumn.css";
 
-export default function TaskColumn() {
+export default function TaskColumn(props) {
     return (
         <div className="container">
             <div className="row">
                 <div className="col-11">
                     <div className="TaskColumn-left">
-                        <p>Meditate</p>
+                        <p>{props.task}</p>
                     </div>
                 </div>
                 <div className="col-1">

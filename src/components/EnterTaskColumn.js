@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/EnterTaskColumn.css";
 
-export default function EnterTaskColumn() {
+export default function EnterTaskColumn(props) {
     const [task, setTask] = useState('Pen your tasks here . . .');
 
     const onChange = (event) => {
