@@ -51,7 +51,7 @@ h2 {
   /* or 29px */
 
   text-align: center;
-  letter-spacing: 0.565em;
+  letter-spacing: 0.56em;
 
   color: #a3a3a3;
 }
@@ -69,4 +69,7 @@ h2 {
 .selfCareIcon {
   margin-left: 10px;
   margin-top: 12px;
+}
+.todayDay {
+  color: black;
 }

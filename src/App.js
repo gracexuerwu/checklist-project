@@ -44,6 +44,8 @@ function App() {
   let currentDate = day + '/' + month + '/' + year;
   console.log(currentDate);
 
+  let dayIndex = date.getDay();
+
   let daysOfTheWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 
@@ -56,7 +58,11 @@ function App() {
         </div>
         <h2>Date: {currentDate}</h2>
         <div className="daysOfTheWeek">{daysOfTheWeek.map((day, index) => {
-          return (<span key={index}>{day}</span>);
+          if (index === dayIndex) {
+            return (<strong className="todayDay" key={index}>{day}</strong>);
+          } else {
+            return (<span key={index}>{day}</span>);
+          }
         })}</div>
         <EnterTaskColumn callback={callbackByEnterTaskColumn} />
         <div className="EnterMessage">**You’ve exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div>
