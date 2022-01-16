@@ -1,32 +1,57 @@
-.TaskColumn-left {
-  width: 702px;
+.TaskColumn-right {
+  /* width: 702px;
   height: 50px;
   background: #ffe5c4;
   border: 1px dashed #000000;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px 0px 0px 20px;
+  border-radius: 20px 0px 0px 20px; */
   /* margin: 0 auto; */
-  margin-top: 15px;
-}
-.TaskColumn-left p {
-  margin-top: 10px;
-}
-.TaskColumn-right {
-  width: 51px;
+  width: 716px;
   height: 50px;
-  background: #ffe5c4;
+  margin-top: 15px;
+  background: #ffe7c8;
   border: 1px dashed #000000;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 20px 20px 0px;
-  margin-top: 15px;
 }
-p {
+.TaskColumn-right p {
+  margin-top: 10px;
+}
+.TaskColumn-left {
+  /* width: 51px;
+  height: 50px;
+  background: #ffe5c4;
+  border: 1px dashed #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 20px 20px 0px; */
+  width: 59px;
+  height: 50px;
+  background: #ffe7c8;
+  border: 1px dashed #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px 0px 0px 20px;
+  margin-top: 15px;
+  margin-right: 0;
+}
+.TaskColumn p {
   text-align: start;
   margin-left: 15px;
   font-size: 20px;
+  margin-bottom: 0;
 }
 .tickBox {
   margin-top: 15px;
+}
+.row {
+  margin: 0 auto;
+}
+.TaskColumn .col-1 {
+  padding: 0;
+}
+.TaskColumn .col-11 {
+  padding: 0;
 }
