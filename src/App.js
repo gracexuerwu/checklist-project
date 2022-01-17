@@ -2,7 +2,7 @@ import { useState } from "react";
 import './App.css';
 
 //import components
-import TaskColumn from './components/TaskColumn';
+import TaskRow from './components/TaskRow';
 import TaskTracker from './components/TaskTracker';
 import EnterTaskColumn from './components/EnterTaskColumn';
 import Signature from './components/Signature';
@@ -79,7 +79,7 @@ function App() {
         <TaskColumn task="CCC" /> */}
         {
           todoArray.map(({ task, status }, index) => (
-            <TaskColumn key={index} task={task} />
+            <TaskRow key={index} task={task} />
           ))
         }
         <div className="Heading">Task Tracker</div>
