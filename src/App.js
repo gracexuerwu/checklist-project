@@ -2,7 +2,7 @@ import { useState } from "react";
 import './App.css';
 
 //import components
-import TaskColumn from './components/TaskColumn';
+import TaskRow from './components/TaskRow';
 import TaskTracker from './components/TaskTracker';
 import EnterTaskColumn from './components/EnterTaskColumn';
 import Signature from './components/Signature';
@@ -21,9 +21,9 @@ function App() {
   }
 
   const [todoArray, setTodoArray] = useState([
-    { task: 'AAA', status: false },
-    { task: 'BBB', status: false },
-    { task: 'CCC', status: false }
+    // { task: 'AAA', status: false },
+    // { task: 'BBB', status: false },
+    // { task: 'To do', status: false }
   ]);
   console.log(todoArray.length);
 
@@ -36,14 +36,15 @@ function App() {
       </div>
     );
   }
-  function errorMessage(props) {
-    return (
-      <div> {todoArray.length > 5 &&
-        <div className="">error message You have the max number of tasks</div>
-      }
-      </div>
-    )
-  }
+
+  // function errorMessage(props) {
+  //   return (
+  //     <div> {todoArray.length > 5 &&
+  //       <div className="">error message You have the max number of tasks</div>
+  //     }
+  //     </div>
+  //   )
+  // }
 
   //Date
   let date = new Date();
@@ -80,14 +81,14 @@ function App() {
           }
         })}</div>
         <EnterTaskColumn callback={callbackByEnterTaskColumn} />
-        <div className="EnterMessage">**You’ve exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div>
-        <errorMessage message={errorMessage} />
+        { todoArray.length > 4 && <div className="EnterMessage">**You've exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div> }
+        {/* <errorMessage message={errorMessage} /> */}
         <TaskToDo todoList={todoArray} />
         {/* <TaskColumn task="AAA" />
         <TaskColumn task="CCC" /> */}
         {
           todoArray.map(({ task, status }, index) => (
-            <TaskColumn key={index} task={task} />
+            <TaskRow key={index} task={task} />
           ))
         }
         <div className="Heading">Task Tracker</div>
