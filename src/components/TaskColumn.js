@@ -7,7 +7,9 @@ export default function TaskColumn(props) {
             <div className="row">
                 <div className="col-1">
                     <div className="TaskColumn-left">
-                        <div className="NumberBox"></div>
+                        <div className="checkBox">
+                            <input type="checkbox" id="checkBox" name="checkBox" />
+                        </div>
                     </div>
                 </div>
                 <div className="col-11">

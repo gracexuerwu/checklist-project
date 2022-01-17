@@ -76,7 +76,7 @@ function App() {
             return (<strong key={index} className="daysOfTheWeekBold">{day}</strong>);
           }
           else {
-            return (<span key={index}>{day}</span>);
+            return (<span key={index} className="day">{day}</span>);
           }
         })}</div>
         <EnterTaskColumn callback={callbackByEnterTaskColumn} />

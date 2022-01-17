@@ -49,14 +49,16 @@ h2 {
   font-size: 22px;
   line-height: 133.9%;
   /* or 29px */
-
   text-align: center;
-  letter-spacing: 0.565em;
-
+  letter-spacing: 0.12em;
   color: #a3a3a3;
 }
 strong {
   color: black;
+}
+.day {
+  margin-left: 6px;
+  margin-right: 6px;
 }
 .Heading {
   text-align: start;
