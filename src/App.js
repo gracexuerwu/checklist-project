@@ -25,6 +25,16 @@ function App() {
     { task: 'BBB', status: false },
     { task: 'CCC', status: false }
   ]);
+  console.log(todoArray.length);
+
+  function errorMessage() {
+    if (todoArray.length > 5) {
+      return <div>**You’ve exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div>;
+    }
+    else {
+      return null;
+    }
+  }
 
   //Date
   let date = new Date();
@@ -54,14 +64,14 @@ function App() {
         <h2>Date: {currentDate}</h2>
         <div className="daysOfTheWeek">{daysOfTheWeek.map((day, index) => {
           if (index === dayIndex) {
-            return (<strong key={index}>{day}</strong>);
+            return (<strong key={index} className="daysOfTheWeekBold">{day}</strong>);
           }
           else {
             return (<span key={index}>{day}</span>);
           }
         })}</div>
         <EnterTaskColumn callback={callbackByEnterTaskColumn} />
-        <div className="EnterMessage">**You’ve exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div>
+        <div className="EnterMessage">{errorMessage}</div>
         <div className="Heading">Tasks to do</div>
         {/* <TaskColumn task="AAA" />
         <TaskColumn task="CCC" /> */}
