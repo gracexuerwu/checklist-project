@@ -27,13 +27,22 @@ function App() {
   ]);
   console.log(todoArray.length);
 
-  function errorMessage() {
-    if (todoArray.length > 5) {
-      return <div>**You’ve exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div>;
-    }
-    else {
-      return null;
-    }
+  function TaskToDo(props) {
+    return (
+      <div>
+        {todoArray.length > 0 &&
+          <div className="Heading">You have {todoArray.length} Tasks to do</div>
+        }
+      </div>
+    );
+  }
+  function errorMessage(props) {
+    return (
+      <div> {todoArray.length > 5 &&
+        <div className="">error message You have the max number of tasks</div>
+      }
+      </div>
+    )
   }
 
   //Date
@@ -71,8 +80,9 @@ function App() {
           }
         })}</div>
         <EnterTaskColumn callback={callbackByEnterTaskColumn} />
-        <div className="EnterMessage">{errorMessage}</div>
-        <div className="Heading">Tasks to do</div>
+        <div className="EnterMessage">**You’ve exceeded the max. number of tasks. Avoid trying to overload yourself! :)</div>
+        <errorMessage message={errorMessage} />
+        <TaskToDo todoList={todoArray} />
         {/* <TaskColumn task="AAA" />
         <TaskColumn task="CCC" /> */}
         {
