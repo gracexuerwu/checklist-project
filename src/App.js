@@ -1,38 +1,39 @@
 import { useState } from "react";
-import './App.css';
+import "./App.css";
 
 //import components
-import TaskRow from './components/TaskRow';
-import TaskTracker from './components/TaskTracker';
-import EnterTaskColumn from './components/EnterTaskColumn';
-import Signature from './components/Signature';
+import TaskRow from "./components/TaskRow";
+import TaskTracker from "./components/TaskTracker";
+import EnterTaskColumn from "./components/EnterTaskColumn";
+import Signature from "./components/Signature";
 
 //import images
 import selfCareicon from "./images/selfcare.png";
 
 function App() {
-
   function callbackByEnterTaskColumn(task) {
     // alert(task);
     if (todoArray.length < 5) {
       setTodoArray([...todoArray, { task, status: false }]);
+    } else {
     }
-    else { }
   }
 
-  const [todoArray, setTodoArray] = useState([
-    { task: 'AAA', status: false },
-    { task: 'BBB', status: false },
-    { task: 'CCC', status: false }
-  ]);
+  const [todoArray, setTodoArray] = useState([]);
   console.log(todoArray.length);
 
   function TaskToDo(props) {
     return (
       <div>
-        {todoArray.length > 0 &&
+        {todoArray.length === 0 && (
+          <div className="Heading">You have zero Tasks to do</div>
+        )}
+        {todoArray.length === 1 && (
+          <div className="Heading">You have 1 Task to do</div>
+        )}
+        {todoArray.length > 1 && (
           <div className="Heading">You have {todoArray.length} Tasks to do</div>
-        }
+        )}
       </div>
     );
   }
@@ -43,12 +44,12 @@ function App() {
   if (day < 10) {
     day = `0${day}`;
   }
-  let month = (date.getMonth() + 1);
+  let month = date.getMonth() + 1;
   if (month < 10) {
     month = `0${month}`;
   }
   let year = date.getFullYear();
-  let currentDate = day + '/' + month + '/' + year;
+  let currentDate = day + "/" + month + "/" + year;
   console.log(currentDate);
 
   let daysOfTheWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -63,31 +64,43 @@ function App() {
           <img src={selfCareicon} alt="" width={65} className="selfCareIcon" />
         </div>
         <h2>Date: {currentDate}</h2>
-        <div className="daysOfTheWeek">{daysOfTheWeek.map((day, index) => {
-          if (index === dayIndex) {
-            return (<strong key={index} className="daysOfTheWeekBold">{day}</strong>);
-          }
-          else {
-            return (<span key={index} className="day">{day}</span>);
-          }
-        })}</div>
+        <div className="daysOfTheWeek">
+          {daysOfTheWeek.map((day, index) => {
+            if (index === dayIndex) {
+              return (
+                <strong key={index} className="daysOfTheWeekBold">
+                  {day}
+                </strong>
+              );
+            } else {
+              return (
+                <span key={index} className="day">
+                  {day}
+                </span>
+              );
+            }
+          })}
+        </div>
         <EnterTaskColumn callback={callbackByEnterTaskColumn} />
 
-        {todoArray.length > 4 && <div className="EnterMessage">**You’ve reaching the max. number of tasks. Avoid trying to overload yourself! :)</div>}
+        {todoArray.length > 4 && (
+          <div className="EnterMessage">
+            **You’ve reaching the max. number of tasks. Avoid trying to overload
+            yourself! :)
+          </div>
+        )}
         <TaskToDo todoList={todoArray} />
         {/* <TaskColumn task="AAA" />
         <TaskColumn task="CCC" /> */}
-        {
-          todoArray.map(({ task, status }, index) => (
-            <TaskRow key={index} task={task} />
-          ))
-        }
+        {todoArray.map(({ task, status }, index) => (
+          <TaskRow key={index} task={task} />
+        ))}
         <div className="Heading">Task Tracker</div>
-        <TaskTracker />
+        <TaskTracker arrayLength={todoArray.length} />
         <Signature />
       </div>
-    </div >
-  )
+    </div>
+  );
 }
 
 export default App;
